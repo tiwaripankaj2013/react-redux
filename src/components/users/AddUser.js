@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {addNewUser} from '../../actions/userAction';
+import {addNewUser} from '../../redux/actions/userAction';
 import UserList from "./UserList";
 
 const AddUser = () => {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {editUser} from '../../actions/userAction';
+import {editUser} from '../../redux/actions/userAction';
 
 
 const EditUser = ({id,name,email, resetData}) => {

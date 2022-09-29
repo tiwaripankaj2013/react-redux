@@ -7,7 +7,7 @@ export function inputReducer(state = [], action) {
 
         case 'inputIncrement': {
             const result = state.map((item) => {
-                if (item.id == action.payload) {
+                if (item.id === action.payload) {
                     return { ...item, value: Number(item.value) + 1 }
                 } else {
                     return item;
@@ -18,7 +18,7 @@ export function inputReducer(state = [], action) {
 
         case "inputDecrement": {
             const result = state.map(item => {
-                if (item.id == action.payload) {
+                if (item.id === action.payload) {
                     return { ...item, value: Number(item.value) - 1 }
                 } else {
                     return item;
@@ -28,7 +28,7 @@ export function inputReducer(state = [], action) {
         }
 
         case "inputDelete": {
-            const result = state.filter(item => item.id != action.payload);
+            const result = state.filter(item => item.id !== action.payload);
             return result;
         }
 

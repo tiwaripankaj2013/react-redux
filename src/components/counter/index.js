@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, reset } from '../../actions/counterAction';
-import { addNewNumber, inputIcrement, inputDecrement, inputDelete, removeAll } from '../../actions/inputAction';
+import { increment, decrement, reset } from '../../redux/actions/counterAction';
+import { addNewNumber, inputIcrement, inputDecrement, inputDelete, removeAll } from '../../redux/actions/inputAction';
 function Counter() {
   const [input, setInput] = useState('');
   // useSelector select the store read redux store 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteUser, } from '../../actions/userAction';
+import { deleteUser, } from '../../redux/actions/userAction';
 
 import EditUser from './EditUser';
 const UserList = () => {

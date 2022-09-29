@@ -5,7 +5,7 @@ export function userReducer(state = [], action) {
         }
         case 'editUser': {
             const result = state.map((item) => {
-                if (item.id == action.payload.id) {
+                if (item.id === action.payload.id) {
                     console.log('first', action.payload)
                     return { ...item, name: action.payload.name, email: action.payload.email }
                 } else {
@@ -15,11 +15,7 @@ export function userReducer(state = [], action) {
             return result;
         }
         case 'deleteUser': {
-            const result = state.filter((item) => {
-                if (item.id !== action.payload) {
-                    return { item }
-                }
-            })
+            const result = state.filter((item) =>  item.id !== action.payload)
             return result;
         }
         default: {
