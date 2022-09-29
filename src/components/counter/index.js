@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, reset } from './actions/counter';
-import { addNewNumber, inputIcrement, inputDecrement, inputDelete, removeAll } from './actions/inputAction';
+import { increment, decrement, reset } from '../../actions/counterAction';
+import { addNewNumber, inputIcrement, inputDecrement, inputDelete, removeAll } from '../../actions/inputAction';
 function Counter() {
   const [input, setInput] = useState('');
   // useSelector select the store read redux store 
@@ -26,23 +26,24 @@ function Counter() {
       value: input,
     }
     // passing form data to action
+    console.log(e.target.value);
     dispatch(addNewNumber(formInput));
     setInput('');
   }
 
   return (
-    <div className="App">
+    <div className="container mx-auto">
       <header className="container mx-auto">
         <form onSubmit={handleSubmit}>
           <input type='number' className=' border border-teal-700' value={input} onChange={handleInput} />
-          <button className='bg-teal-800 p-1 text-white text-3xl' onClick={() => setInput(Math.round(Math.random() * 100))} type='submit'>Add Random</button>
+          <button className='bg-teal-800 p-1 text-white text-xl' onClick={() => setInput(Math.round(Math.random() * 100))} type='submit'>Add Random</button>
         </form>
-        <button className='bg-teal-800 p-1 text-white text-3xl mx-1' onClick={() => dispatch(removeAll())}>Remove All</button>
+        <button className='bg-teal-800 p-1 text-white text-xl mx-1' onClick={() => dispatch(removeAll())}>Remove All</button>
 
-        <button className='bg-teal-800 p-1 text-white text-3xl' onClick={handleIncrement}>+</button>
+        <button className='bg-teal-800 p-1 text-white text-xl' onClick={handleIncrement}>+</button>
         <p className='inline-block text-2xl p-1'>{store.counterReducer}</p>
-        <button className=' bg-red-800 p-1 text-white text-3xl' onClick={() => dispatch(decrement())}>-</button>
-        <button className=' bg-gray-800 p-1 text-white text-3xl' onClick={() => dispatch(reset())}>Reset</button>
+        <button className=' bg-red-800 p-1 text-white text-xl' onClick={() => dispatch(decrement())}>-</button>
+        <button className=' bg-gray-800 p-1 text-white text-xl' onClick={() => dispatch(reset())}>Reset</button>
       </header>
       <ul>
         {
@@ -52,7 +53,8 @@ function Counter() {
                 <button className='bg-teal-800 p-1 text-white text-3xl' onClick={() => dispatch(inputIcrement(listItem.id))}>+</button>
                 <p className='inline-block text-2xl p-1'>{listItem.value}</p>
                 <button className=' bg-red-800 p-1 text-white text-3xl' onClick={() => dispatch(inputDecrement(listItem.id))}>-</button>
-                <button className=' bg-gray-800 p-1 text-white text-3xl' onClick={() => dispatch(inputDelete(listItem.id))} >Delete</button></li>
+                <button className=' bg-gray-800 p-1 text-white text-3xl' onClick={() => dispatch(inputDelete(listItem.id))} >Delete</button>
+                </li>
             }
           )
         }
