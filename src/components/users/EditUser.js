@@ -15,7 +15,7 @@ const dispatch =  useDispatch();
       name: userName,
       email:userEmail,
     }
-    console.log(FormData)
+    // console.log(FormData)
     // passing form data to action
     dispatch(editUser(formInput));
     resetData()

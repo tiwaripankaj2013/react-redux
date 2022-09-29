@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteUser, editUser } from '../../actions/userAction';
+import { deleteUser, } from '../../actions/userAction';
 
 import EditUser from './EditUser';
 const UserList = () => {
-    const [user, setUser] = useState({})
-    const store = useSelector((store) => store)
+    const [user, setUser] = useState({});
+    const store = useSelector((store) => store);
     const dispatch = useDispatch();
     const findUser = (id) => {
         let res = store.listUser.find((item) => item.id === id);
