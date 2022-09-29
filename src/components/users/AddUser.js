@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {addNewUser} from '../../redux/actions/userAction';
-import UserList from "./UserList";
 
 const AddUser = () => {
   const [userName,setUserName] = useState('');
   const [userEmail,setUserEmail] = useState('');
 const dispatch =  useDispatch();
+
   const formSubmit = (e) => {
     e.preventDefault();
     const formInput = {

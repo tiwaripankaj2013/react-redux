@@ -6,7 +6,7 @@ export function userReducer(state = [], action) {
         case 'editUser': {
             const result = state.map((item) => {
                 if (item.id === action.payload.id) {
-                    console.log('first', action.payload)
+                    // console.log('first', action.payload)
                     return { ...item, name: action.payload.name, email: action.payload.email }
                 } else {
                     return item;
